@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "churn"."main_raw"."Telco_customer_churn" ("CustomerID" text,"Count" integer,"Country" text,"State" text,"City" text,"Zip Code" integer,"Lat Long" text,"Latitude" float8,"Longitude" float8,"Gender" text,"Senior Citizen" text,"Partner" text,"Dependents" text,"Tenure Months" integer,"Phone Service" text,"Multiple Lines" text,"Internet Service" text,"Online Security" text,"Online Backup" text,"Device Protection" text,"Tech Support" text,"Streaming TV" text,"Streaming Movies" text,"Contract" text,"Paperless Billing" text,"Payment Method" text,"Monthly Charges" float8,"Total Charges" float8,"Churn Label" text,"Churn Value" integer,"Churn Score" integer,"CLTV" integer,"Churn Reason" text)
+  ;
+    -- dbt seed --
+    
+          COPY "churn"."main_raw"."Telco_customer_churn" FROM '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/seeds/Telco_customer_churn.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

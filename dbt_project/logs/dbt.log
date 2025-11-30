@@ -1,0 +1,1815 @@
+[0m18:33:48.896006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad38c6daf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad38c6e720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad38322c90>]}
+
+
+============================== 18:33:48.904626 | 367574be-2b08-4ca7-9da3-a12825f354ee ==============================
+[0m18:33:48.904626 [info ] [MainThread]: Running with dbt=1.8.7
+[0m18:33:48.905425 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt seed', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:33:49.350318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad39f6ce30>]}
+[0m18:33:49.404996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad382cdee0>]}
+[0m18:33:49.408871 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m18:33:49.501442 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m18:33:49.502265 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:33:49.502841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad33735790>]}
+[0m18:33:50.626981 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:33:50.627792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad3334a480>]}
+[0m18:33:50.921200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad32d12f30>]}
+[0m18:33:51.025855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad32e71940>]}
+[0m18:33:51.026493 [info ] [MainThread]: Found 3 models, 1 seed, 13 data tests, 421 macros
+[0m18:33:51.027029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad38b08860>]}
+[0m18:33:51.028994 [info ] [MainThread]: 
+[0m18:33:51.029799 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:33:51.030803 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn'
+[0m18:33:51.248256 [debug] [ThreadPool]: Using duckdb connection "list_churn"
+[0m18:33:51.248870 [debug] [ThreadPool]: On list_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"churn"'
+    
+  
+  
+[0m18:33:51.249322 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:51.278899 [debug] [ThreadPool]: SQL status: OK in 0.029 seconds
+[0m18:33:51.281282 [debug] [ThreadPool]: On list_churn: Close
+[0m18:33:51.283978 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_churn, now create_churn_main_raw)
+[0m18:33:51.284633 [debug] [ThreadPool]: Creating schema "database: "churn"
+schema: "main_raw"
+"
+[0m18:33:51.292180 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_raw"
+[0m18:33:51.292673 [debug] [ThreadPool]: On create_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_raw"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='churn'
+        and type='sqlite'
+    
+  
+[0m18:33:51.293110 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:33:51.299251 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m18:33:51.300730 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_raw"
+[0m18:33:51.301179 [debug] [ThreadPool]: On create_churn_main_raw: BEGIN
+[0m18:33:51.301771 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:51.302177 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_raw"
+[0m18:33:51.302564 [debug] [ThreadPool]: On create_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_raw"} */
+
+    
+    
+        create schema if not exists "churn"."main_raw"
+    
+[0m18:33:51.303293 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:51.304296 [debug] [ThreadPool]: On create_churn_main_raw: COMMIT
+[0m18:33:51.304753 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_raw"
+[0m18:33:51.305198 [debug] [ThreadPool]: On create_churn_main_raw: COMMIT
+[0m18:33:51.307207 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:33:51.307642 [debug] [ThreadPool]: On create_churn_main_raw: Close
+[0m18:33:51.315304 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_churn_main_raw, now list_churn_main_staging)
+[0m18:33:51.315990 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_raw'
+[0m18:33:51.321858 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_marts'
+[0m18:33:51.322292 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:33:51.324659 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:33:51.325344 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_intermediate'
+[0m18:33:51.328968 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:33:51.329563 [debug] [ThreadPool]: On list_churn_main_staging: BEGIN
+[0m18:33:51.330015 [debug] [ThreadPool]: On list_churn_main_raw: BEGIN
+[0m18:33:51.331874 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:33:51.332324 [debug] [ThreadPool]: On list_churn_main_marts: BEGIN
+[0m18:33:51.332760 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:33:51.333187 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:51.333613 [debug] [ThreadPool]: On list_churn_main_intermediate: BEGIN
+[0m18:33:51.334672 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:51.333997 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:51.339991 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m18:33:51.340429 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m18:33:51.340986 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:33:51.341634 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m18:33:51.342154 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:33:51.342517 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:33:51.342962 [debug] [ThreadPool]: On list_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_staging"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_staging'
+    and table_catalog = 'churn'
+  
+[0m18:33:51.343424 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:33:51.345053 [debug] [ThreadPool]: On list_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_intermediate"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intermediate'
+    and table_catalog = 'churn'
+  
+[0m18:33:51.344250 [debug] [ThreadPool]: On list_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_raw"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_raw'
+    and table_catalog = 'churn'
+  
+[0m18:33:51.343824 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:33:51.347452 [debug] [ThreadPool]: On list_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_marts"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_marts'
+    and table_catalog = 'churn'
+  
+[0m18:33:51.400743 [debug] [ThreadPool]: SQL status: OK in 0.056 seconds
+[0m18:33:51.405315 [debug] [ThreadPool]: On list_churn_main_staging: ROLLBACK
+[0m18:33:51.406219 [debug] [ThreadPool]: SQL status: OK in 0.058 seconds
+[0m18:33:51.409339 [debug] [ThreadPool]: SQL status: OK in 0.063 seconds
+[0m18:33:51.411672 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_staging'
+[0m18:33:51.412125 [debug] [ThreadPool]: SQL status: OK in 0.065 seconds
+[0m18:33:51.413597 [debug] [ThreadPool]: On list_churn_main_intermediate: ROLLBACK
+[0m18:33:51.414736 [debug] [ThreadPool]: On list_churn_main_marts: ROLLBACK
+[0m18:33:51.415212 [debug] [ThreadPool]: On list_churn_main_staging: Close
+[0m18:33:51.416499 [debug] [ThreadPool]: On list_churn_main_raw: ROLLBACK
+[0m18:33:51.417712 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_intermediate'
+[0m18:33:51.418717 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_marts'
+[0m18:33:51.420196 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_raw'
+[0m18:33:51.420823 [debug] [ThreadPool]: On list_churn_main_intermediate: Close
+[0m18:33:51.421299 [debug] [ThreadPool]: On list_churn_main_marts: Close
+[0m18:33:51.421717 [debug] [ThreadPool]: On list_churn_main_raw: Close
+[0m18:33:51.425518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad32222240>]}
+[0m18:33:51.426160 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:51.426580 [debug] [MainThread]: On master: BEGIN
+[0m18:33:51.426954 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:33:51.432956 [debug] [MainThread]: SQL status: OK in 0.006 seconds
+[0m18:33:51.433469 [debug] [MainThread]: On master: COMMIT
+[0m18:33:51.433879 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:51.434291 [debug] [MainThread]: On master: COMMIT
+[0m18:33:51.434860 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:51.435286 [debug] [MainThread]: On master: Close
+[0m18:33:51.436920 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:33:51.437471 [info ] [MainThread]: 
+[0m18:33:51.441648 [debug] [Thread-1 (]: Began running node seed.customer_churn.Telco_customer_churn
+[0m18:33:51.442332 [info ] [Thread-1 (]: 1 of 1 START seed file main_raw.Telco_customer_churn ........................... [RUN]
+[0m18:33:51.443058 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_churn_main_raw, now seed.customer_churn.Telco_customer_churn)
+[0m18:33:51.443608 [debug] [Thread-1 (]: Began compiling node seed.customer_churn.Telco_customer_churn
+[0m18:33:51.444183 [debug] [Thread-1 (]: Began executing node seed.customer_churn.Telco_customer_churn
+[0m18:33:51.930757 [debug] [Thread-1 (]: Using duckdb connection "seed.customer_churn.Telco_customer_churn"
+[0m18:33:51.931384 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: BEGIN
+[0m18:33:51.931843 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:33:51.938493 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m18:33:51.939009 [debug] [Thread-1 (]: Using duckdb connection "seed.customer_churn.Telco_customer_churn"
+[0m18:33:51.939503 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "seed.customer_churn.Telco_customer_churn"} */
+
+    create table "churn"."main_raw"."Telco_customer_churn" ("CustomerID" text,"Count" integer,"Country" text,"State" text,"City" text,"Zip Code" integer,"Lat Long" text,"Latitude" float8,"Longitude" float8,"Gender" text,"Senior Citizen" text,"Partner" text,"Dependents" text,"Tenure Months" integer,"Phone Service" text,"Multiple Lines" text,"Internet Service" text,"Online Security" text,"Online Backup" text,"Device Protection" text,"Tech Support" text,"Streaming TV" text,"Streaming Movies" text,"Contract" text,"Paperless Billing" text,"Payment Method" text,"Monthly Charges" float8,"Total Charges" float8,"Churn Label" text,"Churn Value" integer,"Churn Score" integer,"CLTV" integer,"Churn Reason" text)
+  
+[0m18:33:51.940646 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:33:51.953174 [debug] [Thread-1 (]: Using duckdb connection "seed.customer_churn.Telco_customer_churn"
+[0m18:33:51.953750 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: 
+          COPY "churn"."main_raw"."Telco_customer_churn" FROM '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/seeds/Telco_customer_churn.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m18:33:52.012681 [debug] [Thread-1 (]: SQL status: OK in 0.058 seconds
+[0m18:33:52.018850 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.customer_churn.Telco_customer_churn"
+[0m18:33:52.039808 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: COMMIT
+[0m18:33:52.040402 [debug] [Thread-1 (]: Using duckdb connection "seed.customer_churn.Telco_customer_churn"
+[0m18:33:52.040869 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: COMMIT
+[0m18:33:52.070703 [debug] [Thread-1 (]: SQL status: OK in 0.029 seconds
+[0m18:33:52.072918 [debug] [Thread-1 (]: On seed.customer_churn.Telco_customer_churn: Close
+[0m18:33:52.125516 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '367574be-2b08-4ca7-9da3-a12825f354ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad39f3bfb0>]}
+[0m18:33:52.126280 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file main_raw.Telco_customer_churn ....................... [[32mINSERT 7043[0m in 0.68s]
+[0m18:33:52.127116 [debug] [Thread-1 (]: Finished running node seed.customer_churn.Telco_customer_churn
+[0m18:33:52.128595 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:52.129071 [debug] [MainThread]: On master: BEGIN
+[0m18:33:52.129530 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:33:52.137145 [debug] [MainThread]: SQL status: OK in 0.008 seconds
+[0m18:33:52.137651 [debug] [MainThread]: On master: COMMIT
+[0m18:33:52.138069 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:52.138485 [debug] [MainThread]: On master: COMMIT
+[0m18:33:52.139063 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:52.139493 [debug] [MainThread]: On master: Close
+[0m18:33:52.141210 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:33:52.141616 [debug] [MainThread]: Connection 'list_churn_main_staging' was properly closed.
+[0m18:33:52.141993 [debug] [MainThread]: Connection 'seed.customer_churn.Telco_customer_churn' was properly closed.
+[0m18:33:52.142374 [debug] [MainThread]: Connection 'list_churn_main_marts' was properly closed.
+[0m18:33:52.142732 [debug] [MainThread]: Connection 'list_churn_main_intermediate' was properly closed.
+[0m18:33:52.143165 [info ] [MainThread]: 
+[0m18:33:52.143701 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 1.11 seconds (1.11s).
+[0m18:33:52.144539 [debug] [MainThread]: Command end result
+[0m18:33:52.176210 [info ] [MainThread]: 
+[0m18:33:52.176926 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:33:52.177474 [info ] [MainThread]: 
+[0m18:33:52.177977 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:33:52.180423 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 3.3299088, "process_user_time": 4.157092, "process_kernel_time": 0.270031, "process_mem_max_rss": "196340", "process_in_blocks": "110440", "process_out_blocks": "8272"}
+[0m18:33:52.181057 [debug] [MainThread]: Command `dbt seed` succeeded at 18:33:52.180949 after 3.33 seconds
+[0m18:33:52.181637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad381e5280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad381e4380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ad381e4290>]}
+[0m18:33:52.182161 [debug] [MainThread]: Flushing usage events
+[0m18:37:00.175622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a8c07050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a76b1910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a76b1220>]}
+
+
+============================== 18:37:00.181415 | 626724d4-1ab8-4ee0-a191-7fe5645c2e3e ==============================
+[0m18:37:00.181415 [info ] [MainThread]: Running with dbt=1.8.7
+[0m18:37:00.182389 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:37:00.373616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a6a2e150>]}
+[0m18:37:00.452575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a8960ec0>]}
+[0m18:37:00.455679 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m18:37:00.540792 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m18:37:00.668776 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:37:00.669615 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:37:00.713828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a21dffe0>]}
+[0m18:37:00.820618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a1f98a10>]}
+[0m18:37:00.821279 [info ] [MainThread]: Found 3 models, 1 seed, 13 data tests, 421 macros
+[0m18:37:00.821872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a21ca9f0>]}
+[0m18:37:00.824069 [info ] [MainThread]: 
+[0m18:37:00.824894 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:37:00.830968 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn'
+[0m18:37:00.831796 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn'
+[0m18:37:00.849481 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn'
+[0m18:37:00.887803 [debug] [ThreadPool]: Using duckdb connection "list_churn"
+[0m18:37:00.888645 [debug] [ThreadPool]: Using duckdb connection "list_churn"
+[0m18:37:00.889060 [debug] [ThreadPool]: On list_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"churn"'
+    
+  
+  
+[0m18:37:00.889509 [debug] [ThreadPool]: Using duckdb connection "list_churn"
+[0m18:37:00.889991 [debug] [ThreadPool]: On list_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"churn"'
+    
+  
+  
+[0m18:37:00.890477 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:00.890917 [debug] [ThreadPool]: On list_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"churn"'
+    
+  
+  
+[0m18:37:00.891362 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:00.891947 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:00.902718 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m18:37:00.904190 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m18:37:00.905491 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m18:37:00.912259 [debug] [ThreadPool]: On list_churn: Close
+[0m18:37:00.907854 [debug] [ThreadPool]: On list_churn: Close
+[0m18:37:00.910187 [debug] [ThreadPool]: On list_churn: Close
+[0m18:37:00.916672 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_churn, now create_churn_main_marts)
+[0m18:37:00.917610 [debug] [ThreadPool]: Creating schema "database: "churn"
+schema: "main_marts"
+"
+[0m18:37:00.918661 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_churn, now create_churn_main_intermediate)
+[0m18:37:00.926460 [debug] [ThreadPool]: Creating schema "database: "churn"
+schema: "main_intermediate"
+"
+[0m18:37:00.919313 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_churn, now create_churn_main_staging)
+[0m18:37:00.941795 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_intermediate"
+[0m18:37:00.944623 [debug] [ThreadPool]: On create_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_intermediate"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='churn'
+        and type='sqlite'
+    
+  
+[0m18:37:00.945251 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:00.943880 [debug] [ThreadPool]: Creating schema "database: "churn"
+schema: "main_staging"
+"
+[0m18:37:00.942814 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_marts"
+[0m18:37:00.952674 [debug] [ThreadPool]: On create_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='churn'
+        and type='sqlite'
+    
+  
+[0m18:37:00.953473 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:00.954269 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_staging"
+[0m18:37:00.957251 [debug] [ThreadPool]: On create_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_staging"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='churn'
+        and type='sqlite'
+    
+  
+[0m18:37:00.957933 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:00.963624 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m18:37:00.965334 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_marts"
+[0m18:37:00.965823 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:37:00.966239 [debug] [ThreadPool]: On create_churn_main_marts: BEGIN
+[0m18:37:00.966629 [debug] [ThreadPool]: SQL status: OK in 0.021 seconds
+[0m18:37:00.968083 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_staging"
+[0m18:37:00.970581 [debug] [ThreadPool]: On create_churn_main_staging: BEGIN
+[0m18:37:00.971405 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:37:00.968769 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:37:00.972689 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_marts"
+[0m18:37:00.973321 [debug] [ThreadPool]: On create_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_marts"} */
+
+    
+    
+        create schema if not exists "churn"."main_marts"
+    
+[0m18:37:00.969916 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_intermediate"
+[0m18:37:00.974273 [debug] [ThreadPool]: On create_churn_main_intermediate: BEGIN
+[0m18:37:00.975154 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:37:00.972042 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_staging"
+[0m18:37:00.976668 [debug] [ThreadPool]: On create_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_staging"} */
+
+    
+    
+        create schema if not exists "churn"."main_staging"
+    
+[0m18:37:00.977589 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m18:37:00.975958 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_intermediate"
+[0m18:37:00.980701 [debug] [ThreadPool]: On create_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "create_churn_main_intermediate"} */
+
+    
+    
+        create schema if not exists "churn"."main_intermediate"
+    
+[0m18:37:00.979391 [debug] [ThreadPool]: On create_churn_main_marts: COMMIT
+[0m18:37:00.982407 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_marts"
+[0m18:37:00.983202 [debug] [ThreadPool]: On create_churn_main_marts: COMMIT
+[0m18:37:00.980025 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m18:37:00.985030 [debug] [ThreadPool]: On create_churn_main_staging: COMMIT
+[0m18:37:00.981679 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:37:00.985717 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_staging"
+[0m18:37:00.990293 [debug] [ThreadPool]: On create_churn_main_staging: COMMIT
+[0m18:37:00.987682 [debug] [ThreadPool]: On create_churn_main_intermediate: COMMIT
+[0m18:37:00.991184 [debug] [ThreadPool]: Using duckdb connection "create_churn_main_intermediate"
+[0m18:37:00.991911 [debug] [ThreadPool]: On create_churn_main_intermediate: COMMIT
+[0m18:37:01.016571 [debug] [ThreadPool]: SQL status: OK in 0.033 seconds
+[0m18:37:01.017487 [debug] [ThreadPool]: On create_churn_main_marts: Close
+[0m18:37:01.018185 [debug] [ThreadPool]: SQL status: OK in 0.024 seconds
+[0m18:37:01.018708 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m18:37:01.019461 [debug] [ThreadPool]: On create_churn_main_intermediate: Close
+[0m18:37:01.020009 [debug] [ThreadPool]: On create_churn_main_staging: Close
+[0m18:37:01.029498 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_churn_main_staging, now list_churn_main_marts)
+[0m18:37:01.030227 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_churn_main_intermediate, now list_churn_main_raw)
+[0m18:37:01.030881 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_churn_main_marts, now list_churn_main_staging)
+[0m18:37:01.039972 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:01.037087 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:01.031477 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_intermediate'
+[0m18:37:01.043021 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:01.043554 [debug] [ThreadPool]: On list_churn_main_raw: BEGIN
+[0m18:37:01.044009 [debug] [ThreadPool]: On list_churn_main_marts: BEGIN
+[0m18:37:01.045973 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:01.046490 [debug] [ThreadPool]: On list_churn_main_staging: BEGIN
+[0m18:37:01.046948 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:01.047422 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:01.047838 [debug] [ThreadPool]: On list_churn_main_intermediate: BEGIN
+[0m18:37:01.048924 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:01.048277 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:01.054892 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m18:37:01.055404 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:37:01.055941 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:37:01.056404 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:01.056872 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:37:01.057252 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:01.057656 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:01.058118 [debug] [ThreadPool]: On list_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_marts"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_marts'
+    and table_catalog = 'churn'
+  
+[0m18:37:01.058572 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:01.060121 [debug] [ThreadPool]: On list_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_intermediate"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intermediate'
+    and table_catalog = 'churn'
+  
+[0m18:37:01.059469 [debug] [ThreadPool]: On list_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_staging"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_staging'
+    and table_catalog = 'churn'
+  
+[0m18:37:01.059002 [debug] [ThreadPool]: On list_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_raw"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_raw'
+    and table_catalog = 'churn'
+  
+[0m18:37:01.122412 [debug] [ThreadPool]: SQL status: OK in 0.062 seconds
+[0m18:37:01.126591 [debug] [ThreadPool]: On list_churn_main_marts: ROLLBACK
+[0m18:37:01.127423 [debug] [ThreadPool]: SQL status: OK in 0.064 seconds
+[0m18:37:01.128206 [debug] [ThreadPool]: SQL status: OK in 0.066 seconds
+[0m18:37:01.129454 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_marts'
+[0m18:37:01.130006 [debug] [ThreadPool]: SQL status: OK in 0.069 seconds
+[0m18:37:01.131295 [debug] [ThreadPool]: On list_churn_main_raw: ROLLBACK
+[0m18:37:01.131887 [debug] [ThreadPool]: On list_churn_main_marts: Close
+[0m18:37:01.133076 [debug] [ThreadPool]: On list_churn_main_staging: ROLLBACK
+[0m18:37:01.134406 [debug] [ThreadPool]: On list_churn_main_intermediate: ROLLBACK
+[0m18:37:01.135471 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_raw'
+[0m18:37:01.136804 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_staging'
+[0m18:37:01.138014 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_intermediate'
+[0m18:37:01.138543 [debug] [ThreadPool]: On list_churn_main_raw: Close
+[0m18:37:01.139017 [debug] [ThreadPool]: On list_churn_main_staging: Close
+[0m18:37:01.139466 [debug] [ThreadPool]: On list_churn_main_intermediate: Close
+[0m18:37:01.143263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a1d3bf20>]}
+[0m18:37:01.143883 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:01.144329 [debug] [MainThread]: On master: BEGIN
+[0m18:37:01.144715 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:37:01.150980 [debug] [MainThread]: SQL status: OK in 0.006 seconds
+[0m18:37:01.151478 [debug] [MainThread]: On master: COMMIT
+[0m18:37:01.151893 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:01.152309 [debug] [MainThread]: On master: COMMIT
+[0m18:37:01.152880 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:37:01.153298 [debug] [MainThread]: On master: Close
+[0m18:37:01.155046 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:37:01.155613 [info ] [MainThread]: 
+[0m18:37:01.157948 [debug] [Thread-1 (]: Began running node model.customer_churn.stg_customers
+[0m18:37:01.158601 [info ] [Thread-1 (]: 1 of 3 START sql view model main_staging.stg_customers ......................... [RUN]
+[0m18:37:01.159252 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_churn_main_intermediate, now model.customer_churn.stg_customers)
+[0m18:37:01.159730 [debug] [Thread-1 (]: Began compiling node model.customer_churn.stg_customers
+[0m18:37:01.168406 [debug] [Thread-1 (]: Writing injected SQL for node "model.customer_churn.stg_customers"
+[0m18:37:01.169227 [debug] [Thread-1 (]: Began executing node model.customer_churn.stg_customers
+[0m18:37:01.202949 [debug] [Thread-1 (]: Writing runtime sql for node "model.customer_churn.stg_customers"
+[0m18:37:01.203857 [debug] [Thread-1 (]: Using duckdb connection "model.customer_churn.stg_customers"
+[0m18:37:01.204372 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: BEGIN
+[0m18:37:01.204801 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:01.211205 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m18:37:01.211735 [debug] [Thread-1 (]: Using duckdb connection "model.customer_churn.stg_customers"
+[0m18:37:01.212273 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.stg_customers"} */
+
+  
+  create view "churn"."main_staging"."stg_customers__dbt_tmp" as (
+    /*
+Staging: Clean and rename columns
+*/
+
+with source as (
+    select * from "churn"."main_raw"."Telco_customer_churn"
+),
+
+cleaned as (
+    select
+        -- IDs
+        "customerID" as customer_id,
+        
+        -- Location
+        "Count" as count_value,
+        "Country" as country,
+        "State" as state,
+        "City" as city,
+        "Zip Code" as zip_code,
+        "Lat Long" as lat_long,
+        "Latitude" as latitude,
+        "Longitude" as longitude,
+        
+        -- Demographics
+        "Gender" as gender,
+        "Senior Citizen" as is_senior_citizen,
+        "Partner" as has_partner,
+        "Dependents" as has_dependents,
+        
+        -- Account
+        "Tenure Months" as tenure_months,
+        "Contract" as contract_type,
+        "Paperless Billing" as has_paperless_billing,
+        "Payment Method" as payment_method,
+        
+        -- Services
+        "Phone Service" as has_phone_service,
+        "Multiple Lines" as has_multiple_lines,
+        "Internet Service" as internet_service_type,
+        "Online Security" as has_online_security,
+        "Online Backup" as has_online_backup,
+        "Device Protection" as has_device_protection,
+        "Tech Support" as has_tech_support,
+        "Streaming TV" as has_streaming_tv,
+        "Streaming Movies" as has_streaming_movies,
+        
+        -- Financial
+        "Monthly Charges" as monthly_charges,
+        "Total Charges" as total_charges,
+        "CLTV" as customer_lifetime_value,
+        
+        -- Churn
+        "Churn Label" as churn_label,
+        "Churn Value" as churn_value,
+        "Churn Score" as churn_score,
+        "Churn Reason" as churn_reason
+        
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m18:37:01.213590 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:37:01.219806 [debug] [Thread-1 (]: Using duckdb connection "model.customer_churn.stg_customers"
+[0m18:37:01.220314 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.stg_customers"} */
+alter view "churn"."main_staging"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m18:37:01.221056 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.235412 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: COMMIT
+[0m18:37:01.235947 [debug] [Thread-1 (]: Using duckdb connection "model.customer_churn.stg_customers"
+[0m18:37:01.236449 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: COMMIT
+[0m18:37:01.239012 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:37:01.243724 [debug] [Thread-1 (]: Using duckdb connection "model.customer_churn.stg_customers"
+[0m18:37:01.244369 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.stg_customers"} */
+drop view if exists "churn"."main_staging"."stg_customers__dbt_backup" cascade
+[0m18:37:01.245415 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.249423 [debug] [Thread-1 (]: On model.customer_churn.stg_customers: Close
+[0m18:37:01.261073 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a892fef0>]}
+[0m18:37:01.261858 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main_staging.stg_customers .................... [[32mOK[0m in 0.10s]
+[0m18:37:01.262692 [debug] [Thread-1 (]: Finished running node model.customer_churn.stg_customers
+[0m18:37:01.263621 [debug] [Thread-3 (]: Began running node model.customer_churn.int_customer_features
+[0m18:37:01.264289 [info ] [Thread-3 (]: 2 of 3 START sql view model main_intermediate.int_customer_features ............ [RUN]
+[0m18:37:01.264903 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_churn_main_raw, now model.customer_churn.int_customer_features)
+[0m18:37:01.265392 [debug] [Thread-3 (]: Began compiling node model.customer_churn.int_customer_features
+[0m18:37:01.268502 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_churn.int_customer_features"
+[0m18:37:01.269340 [debug] [Thread-3 (]: Began executing node model.customer_churn.int_customer_features
+[0m18:37:01.273685 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_churn.int_customer_features"
+[0m18:37:01.274402 [debug] [Thread-3 (]: Using duckdb connection "model.customer_churn.int_customer_features"
+[0m18:37:01.274877 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: BEGIN
+[0m18:37:01.275334 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:37:01.281658 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m18:37:01.282181 [debug] [Thread-3 (]: Using duckdb connection "model.customer_churn.int_customer_features"
+[0m18:37:01.282749 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.int_customer_features"} */
+
+  
+  create view "churn"."main_intermediate"."int_customer_features__dbt_tmp" as (
+    /*
+Intermediate: Encode features for ML
+*/
+
+with customers as (
+    select * from "churn"."main_staging"."stg_customers"
+),
+
+features as (
+    select
+        customer_id,
+        
+        -- Location (keep original)
+        count_value,
+        country,
+        state,
+        city,
+        zip_code,
+        lat_long,
+        latitude,
+        longitude,
+        
+        -- Demographics (encoded: 0/1)
+        case when gender = 'Male' then 1 else 0 end as gender_encoded,
+        case when is_senior_citizen = 'Yes' then 1 else 0 end as senior_citizen_encoded,
+        case when has_partner = 'Yes' then 1 else 0 end as partner_encoded,
+        case when has_dependents = 'Yes' then 1 else 0 end as dependents_encoded,
+        
+        -- Tenure
+        tenure_months,
+        
+        -- Phone services
+        case when has_phone_service = 'Yes' then 1 else 0 end as phone_service_encoded,
+        case 
+            when has_multiple_lines = 'Yes' then 2
+            when has_multiple_lines = 'No' then 1
+            else 0
+        end as multiple_lines_encoded,
+        
+        -- Internet services (0=no internet, 1=no service, 2=yes)
+        case 
+            when internet_service_type = 'Fiber optic' then 2
+            when internet_service_type = 'DSL' then 1
+            else 0
+        end as internet_service_encoded,
+        
+        case 
+            when has_online_security = 'Yes' then 2
+            when has_online_security = 'No' then 1
+            else 0
+        end as online_security_encoded,
+        
+        case 
+            when has_online_backup = 'Yes' then 2
+            when has_online_backup = 'No' then 1
+            else 0
+        end as online_backup_encoded,
+        
+        case 
+            when has_device_protection = 'Yes' then 2
+            when has_device_protection = 'No' then 1
+            else 0
+        end as device_protection_encoded,
+        
+        case 
+            when has_tech_support = 'Yes' then 2
+            when has_tech_support = 'No' then 1
+            else 0
+        end as tech_support_encoded,
+        
+        case 
+            when has_streaming_tv = 'Yes' then 2
+            when has_streaming_tv = 'No' then 1
+            else 0
+        end as streaming_tv_encoded,
+        
+        case 
+            when has_streaming_movies = 'Yes' then 2
+            when has_streaming_movies = 'No' then 1
+            else 0
+        end as streaming_movies_encoded,
+        
+        -- Contract
+        case 
+            when contract_type = 'Two year' then 2
+            when contract_type = 'One year' then 1
+            else 0
+        end as contract_encoded,
+        
+        case when has_paperless_billing = 'Yes' then 1 else 0 end as paperless_billing_encoded,
+        
+        -- Payment method
+        case 
+            when payment_method like '%Credit card%' then 3
+            when payment_method like '%Bank transfer%' then 2
+            when payment_method like '%Mailed check%' then 1
+            else 0
+        end as payment_method_encoded,
+        
+        -- Financial
+        monthly_charges,
+        total_charges,
+        customer_lifetime_value,
+        churn_score,
+        
+        -- Target
+        churn_value as churn
+        
+    from customers
+)
+
+select * from features
+  );
+
+[0m18:37:01.284844 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:37:01.287884 [debug] [Thread-3 (]: Using duckdb connection "model.customer_churn.int_customer_features"
+[0m18:37:01.288365 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.int_customer_features"} */
+alter view "churn"."main_intermediate"."int_customer_features__dbt_tmp" rename to "int_customer_features"
+[0m18:37:01.289095 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.290711 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: COMMIT
+[0m18:37:01.291187 [debug] [Thread-3 (]: Using duckdb connection "model.customer_churn.int_customer_features"
+[0m18:37:01.291628 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: COMMIT
+[0m18:37:01.294136 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m18:37:01.296651 [debug] [Thread-3 (]: Using duckdb connection "model.customer_churn.int_customer_features"
+[0m18:37:01.297122 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.int_customer_features"} */
+drop view if exists "churn"."main_intermediate"."int_customer_features__dbt_backup" cascade
+[0m18:37:01.297815 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.299234 [debug] [Thread-3 (]: On model.customer_churn.int_customer_features: Close
+[0m18:37:01.307755 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a0291be0>]}
+[0m18:37:01.308566 [info ] [Thread-3 (]: 2 of 3 OK created sql view model main_intermediate.int_customer_features ....... [[32mOK[0m in 0.04s]
+[0m18:37:01.309377 [debug] [Thread-3 (]: Finished running node model.customer_churn.int_customer_features
+[0m18:37:01.310340 [debug] [Thread-2 (]: Began running node model.customer_churn.fct_customer_churn
+[0m18:37:01.310930 [info ] [Thread-2 (]: 3 of 3 START sql table model main_marts.fct_customer_churn ..................... [RUN]
+[0m18:37:01.311587 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_churn_main_marts, now model.customer_churn.fct_customer_churn)
+[0m18:37:01.312036 [debug] [Thread-2 (]: Began compiling node model.customer_churn.fct_customer_churn
+[0m18:37:01.315724 [debug] [Thread-2 (]: Writing injected SQL for node "model.customer_churn.fct_customer_churn"
+[0m18:37:01.317055 [debug] [Thread-2 (]: Began executing node model.customer_churn.fct_customer_churn
+[0m18:37:01.340719 [debug] [Thread-2 (]: Writing runtime sql for node "model.customer_churn.fct_customer_churn"
+[0m18:37:01.341600 [debug] [Thread-2 (]: Using duckdb connection "model.customer_churn.fct_customer_churn"
+[0m18:37:01.342091 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: BEGIN
+[0m18:37:01.342546 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:37:01.348959 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m18:37:01.349475 [debug] [Thread-2 (]: Using duckdb connection "model.customer_churn.fct_customer_churn"
+[0m18:37:01.349992 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.fct_customer_churn"} */
+
+  
+    
+    
+
+    create  table
+      "churn"."main_marts"."fct_customer_churn__dbt_tmp"
+  
+    as (
+      /*
+Marts: Final ML-ready dataset
+*/
+
+
+
+with features as (
+    select * from "churn"."main_intermediate"."int_customer_features"
+),
+
+final as (
+    select
+        -- ID (for reference)
+        customer_id,
+        
+        -- Location features
+        count_value as "Count",
+        country as "Country",
+        state as "State", 
+        city as "City",
+        zip_code as "Zip Code",
+        lat_long as "Lat Long",
+        latitude as "Latitude",
+        longitude as "Longitude",
+        
+        -- Encoded features (matching training data column names)
+        gender_encoded as "Gender",
+        senior_citizen_encoded as "Senior Citizen",
+        partner_encoded as "Partner",
+        dependents_encoded as "Dependents",
+        tenure_months as "Tenure Months",
+        phone_service_encoded as "Phone Service",
+        multiple_lines_encoded as "Multiple Lines",
+        internet_service_encoded as "Internet Service",
+        online_security_encoded as "Online Security",
+        online_backup_encoded as "Online Backup",
+        device_protection_encoded as "Device Protection",
+        tech_support_encoded as "Tech Support",
+        streaming_tv_encoded as "Streaming TV",
+        streaming_movies_encoded as "Streaming Movies",
+        contract_encoded as "Contract",
+        paperless_billing_encoded as "Paperless Billing",
+        payment_method_encoded as "Payment Method",
+        monthly_charges as "Monthly Charges",
+        total_charges as "Total Charges",
+        customer_lifetime_value as "CLTV",
+        
+        -- Target (NO LEAKAGE FEATURES!)
+        churn as "Churn Label"
+        
+    from features
+    where customer_id is not null
+)
+
+select * from final
+    );
+  
+  
+[0m18:37:01.369964 [debug] [Thread-2 (]: SQL status: OK in 0.019 seconds
+[0m18:37:01.373406 [debug] [Thread-2 (]: Using duckdb connection "model.customer_churn.fct_customer_churn"
+[0m18:37:01.373917 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.fct_customer_churn"} */
+alter table "churn"."main_marts"."fct_customer_churn__dbt_tmp" rename to "fct_customer_churn"
+[0m18:37:01.374838 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.381536 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: COMMIT
+[0m18:37:01.382041 [debug] [Thread-2 (]: Using duckdb connection "model.customer_churn.fct_customer_churn"
+[0m18:37:01.382508 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: COMMIT
+[0m18:37:01.396422 [debug] [Thread-2 (]: SQL status: OK in 0.013 seconds
+[0m18:37:01.400143 [debug] [Thread-2 (]: Using duckdb connection "model.customer_churn.fct_customer_churn"
+[0m18:37:01.400918 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "model.customer_churn.fct_customer_churn"} */
+drop table if exists "churn"."main_marts"."fct_customer_churn__dbt_backup" cascade
+[0m18:37:01.401997 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m18:37:01.404085 [debug] [Thread-2 (]: On model.customer_churn.fct_customer_churn: Close
+[0m18:37:01.441013 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '626724d4-1ab8-4ee0-a191-7fe5645c2e3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a01bcdd0>]}
+[0m18:37:01.441886 [info ] [Thread-2 (]: 3 of 3 OK created sql table model main_marts.fct_customer_churn ................ [[32mOK[0m in 0.13s]
+[0m18:37:01.442704 [debug] [Thread-2 (]: Finished running node model.customer_churn.fct_customer_churn
+[0m18:37:01.444923 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:01.445612 [debug] [MainThread]: On master: BEGIN
+[0m18:37:01.446013 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:37:01.454889 [debug] [MainThread]: SQL status: OK in 0.009 seconds
+[0m18:37:01.455418 [debug] [MainThread]: On master: COMMIT
+[0m18:37:01.455831 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:01.456267 [debug] [MainThread]: On master: COMMIT
+[0m18:37:01.456852 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:37:01.457280 [debug] [MainThread]: On master: Close
+[0m18:37:01.458995 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:37:01.459466 [debug] [MainThread]: Connection 'model.customer_churn.fct_customer_churn' was properly closed.
+[0m18:37:01.459877 [debug] [MainThread]: Connection 'list_churn_main_staging' was properly closed.
+[0m18:37:01.460310 [debug] [MainThread]: Connection 'model.customer_churn.int_customer_features' was properly closed.
+[0m18:37:01.460686 [debug] [MainThread]: Connection 'model.customer_churn.stg_customers' was properly closed.
+[0m18:37:01.461207 [info ] [MainThread]: 
+[0m18:37:01.461745 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 0.64 seconds (0.64s).
+[0m18:37:01.462787 [debug] [MainThread]: Command end result
+[0m18:37:01.489322 [info ] [MainThread]: 
+[0m18:37:01.489998 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:37:01.490522 [info ] [MainThread]: 
+[0m18:37:01.491025 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m18:37:01.491998 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.3614117, "process_user_time": 2.543885, "process_kernel_time": 0.201879, "process_mem_max_rss": "168000", "process_in_blocks": "144", "process_out_blocks": "8264"}
+[0m18:37:01.492642 [debug] [MainThread]: Command `dbt run` succeeded at 18:37:01.492534 after 1.36 seconds
+[0m18:37:01.493079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a6b44a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a8c07050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7875a1d0ee40>]}
+[0m18:37:01.493564 [debug] [MainThread]: Flushing usage events
+[0m18:37:17.865368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc669490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc4e9790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbd03b4d0>]}
+
+
+============================== 18:37:17.871473 | c7161707-1731-48c0-aae4-c838a072d344 ==============================
+[0m18:37:17.871473 [info ] [MainThread]: Running with dbt=1.8.7
+[0m18:37:17.872535 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt test', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:37:18.081395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbe351220>]}
+[0m18:37:18.159617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc40f9e0>]}
+[0m18:37:18.162643 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m18:37:18.260558 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m18:37:18.382558 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:37:18.383112 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:37:18.429040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb791c110>]}
+[0m18:37:18.557256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb760a5d0>]}
+[0m18:37:18.558236 [info ] [MainThread]: Found 3 models, 1 seed, 13 data tests, 421 macros
+[0m18:37:18.558973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc4409b0>]}
+[0m18:37:18.561723 [info ] [MainThread]: 
+[0m18:37:18.562477 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:37:18.563696 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_raw'
+[0m18:37:18.573527 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_marts'
+[0m18:37:18.578185 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_staging'
+[0m18:37:18.582210 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_intermediate'
+[0m18:37:18.606443 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:18.607026 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:18.607472 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:18.607886 [debug] [ThreadPool]: On list_churn_main_raw: BEGIN
+[0m18:37:18.608314 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:18.608796 [debug] [ThreadPool]: On list_churn_main_marts: BEGIN
+[0m18:37:18.609291 [debug] [ThreadPool]: On list_churn_main_staging: BEGIN
+[0m18:37:18.609739 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:18.610211 [debug] [ThreadPool]: On list_churn_main_intermediate: BEGIN
+[0m18:37:18.610614 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:18.611028 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:18.611659 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:18.620446 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m18:37:18.620994 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m18:37:18.621627 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:18.622337 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m18:37:18.622700 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m18:37:18.623142 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:18.623633 [debug] [ThreadPool]: On list_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_marts"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_marts'
+    and table_catalog = 'churn'
+  
+[0m18:37:18.624067 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:18.625662 [debug] [ThreadPool]: On list_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_intermediate"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intermediate'
+    and table_catalog = 'churn'
+  
+[0m18:37:18.624921 [debug] [ThreadPool]: On list_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_raw"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_raw'
+    and table_catalog = 'churn'
+  
+[0m18:37:18.624496 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:18.627601 [debug] [ThreadPool]: On list_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_staging"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_staging'
+    and table_catalog = 'churn'
+  
+[0m18:37:18.696446 [debug] [ThreadPool]: SQL status: OK in 0.070 seconds
+[0m18:37:18.697320 [debug] [ThreadPool]: SQL status: OK in 0.070 seconds
+[0m18:37:18.700010 [debug] [ThreadPool]: On list_churn_main_intermediate: ROLLBACK
+[0m18:37:18.700512 [debug] [ThreadPool]: SQL status: OK in 0.072 seconds
+[0m18:37:18.700929 [debug] [ThreadPool]: SQL status: OK in 0.076 seconds
+[0m18:37:18.702525 [debug] [ThreadPool]: On list_churn_main_raw: ROLLBACK
+[0m18:37:18.703885 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_intermediate'
+[0m18:37:18.705248 [debug] [ThreadPool]: On list_churn_main_staging: ROLLBACK
+[0m18:37:18.706515 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_raw'
+[0m18:37:18.711992 [debug] [ThreadPool]: On list_churn_main_raw: Close
+[0m18:37:18.709469 [debug] [ThreadPool]: On list_churn_main_marts: ROLLBACK
+[0m18:37:18.707221 [debug] [ThreadPool]: On list_churn_main_intermediate: Close
+[0m18:37:18.711458 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_staging'
+[0m18:37:18.713356 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_marts'
+[0m18:37:18.714415 [debug] [ThreadPool]: On list_churn_main_staging: Close
+[0m18:37:18.715486 [debug] [ThreadPool]: On list_churn_main_marts: Close
+[0m18:37:18.719220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c7161707-1731-48c0-aae4-c838a072d344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedb77ea6f0>]}
+[0m18:37:18.719787 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:18.720235 [debug] [MainThread]: On master: BEGIN
+[0m18:37:18.720626 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:37:18.728206 [debug] [MainThread]: SQL status: OK in 0.008 seconds
+[0m18:37:18.728734 [debug] [MainThread]: On master: COMMIT
+[0m18:37:18.729196 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:18.729599 [debug] [MainThread]: On master: COMMIT
+[0m18:37:18.730196 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:37:18.730627 [debug] [MainThread]: On master: Close
+[0m18:37:18.732604 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:37:18.733168 [info ] [MainThread]: 
+[0m18:37:18.735731 [debug] [Thread-1 (]: Began running node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:18.736555 [info ] [Thread-1 (]: 1 of 13 START test accepted_values_fct_customer_churn__Churn_Label___0__1 ...... [RUN]
+[0m18:37:18.737487 [debug] [Thread-2 (]: Began running node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:18.738243 [info ] [Thread-2 (]: 2 of 13 START test accepted_values_int_customer_features_gender_encoded__0__1 .. [RUN]
+[0m18:37:18.739724 [debug] [Thread-3 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:18.740356 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_churn_main_staging, now test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce)
+[0m18:37:18.742667 [debug] [Thread-1 (]: Began compiling node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:18.741902 [debug] [Thread-4 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:18.741152 [info ] [Thread-3 (]: 3 of 13 START test not_null_fct_customer_churn__Churn_Label_ ................... [RUN]
+[0m18:37:18.762909 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_churn_main_intermediate, now test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc)
+[0m18:37:18.763750 [debug] [Thread-3 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:18.762306 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"
+[0m18:37:18.754956 [info ] [Thread-4 (]: 4 of 13 START test not_null_fct_customer_churn__Monthly_Charges_ ............... [RUN]
+[0m18:37:18.749272 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_churn_main_marts, now test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6)
+[0m18:37:18.770922 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_churn_main_raw, now test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0)
+[0m18:37:18.776128 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"
+[0m18:37:18.776829 [debug] [Thread-2 (]: Began compiling node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:18.777457 [debug] [Thread-4 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:18.778015 [debug] [Thread-1 (]: Began executing node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:18.783824 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"
+[0m18:37:18.784515 [debug] [Thread-3 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:18.788588 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"
+[0m18:37:18.802503 [debug] [Thread-1 (]: Writing runtime sql for node "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"
+[0m18:37:18.805340 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"
+[0m18:37:18.806069 [debug] [Thread-2 (]: Began executing node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:18.806961 [debug] [Thread-4 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:18.809298 [debug] [Thread-2 (]: Writing runtime sql for node "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"
+[0m18:37:18.809889 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"
+[0m18:37:18.810380 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"
+[0m18:37:18.812556 [debug] [Thread-4 (]: Writing runtime sql for node "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"
+[0m18:37:18.813289 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc: BEGIN
+[0m18:37:18.813827 [debug] [Thread-1 (]: On test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce: BEGIN
+[0m18:37:18.814677 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:37:18.816401 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"
+[0m18:37:18.815705 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:18.817226 [debug] [Thread-2 (]: On test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6: BEGIN
+[0m18:37:18.815304 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"
+[0m18:37:18.818850 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0: BEGIN
+[0m18:37:18.819593 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:37:18.818053 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:37:18.825705 [debug] [Thread-3 (]: SQL status: OK in 0.011 seconds
+[0m18:37:18.826273 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m18:37:18.827043 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m18:37:18.829867 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"
+[0m18:37:18.828259 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m18:37:18.828783 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"
+[0m18:37:18.827508 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"
+[0m18:37:18.832505 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select "Churn Label"
+from "churn"."main_marts"."fct_customer_churn"
+where "Churn Label" is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.831264 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"
+[0m18:37:18.831767 [debug] [Thread-1 (]: On test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        "Churn Label" as value_field,
+        count(*) as n_records
+
+    from "churn"."main_marts"."fct_customer_churn"
+    group by "Churn Label"
+
+)
+
+select *
+from all_values
+where value_field not in (
+    '0','1'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.830621 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select "Monthly Charges"
+from "churn"."main_marts"."fct_customer_churn"
+where "Monthly Charges" is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.838150 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m18:37:18.835218 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m18:37:18.834237 [debug] [Thread-2 (]: On test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        gender_encoded as value_field,
+        count(*) as n_records
+
+    from "churn"."main_intermediate"."int_customer_features"
+    group by gender_encoded
+
+)
+
+select *
+from all_values
+where value_field not in (
+    '0','1'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.849446 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc: ROLLBACK
+[0m18:37:18.851910 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0: ROLLBACK
+[0m18:37:18.854269 [debug] [Thread-3 (]: Failed to rollback 'test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc'
+[0m18:37:18.854912 [debug] [Thread-1 (]: SQL status: OK in 0.018 seconds
+[0m18:37:18.855458 [debug] [Thread-2 (]: SQL status: OK in 0.011 seconds
+[0m18:37:18.856491 [debug] [Thread-4 (]: Failed to rollback 'test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0'
+[0m18:37:18.856926 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc: Close
+[0m18:37:18.858654 [debug] [Thread-1 (]: On test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce: ROLLBACK
+[0m18:37:18.860169 [debug] [Thread-2 (]: On test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6: ROLLBACK
+[0m18:37:18.860689 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0: Close
+[0m18:37:18.862574 [debug] [Thread-1 (]: Failed to rollback 'test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce'
+[0m18:37:18.861565 [info ] [Thread-3 (]: 3 of 13 PASS not_null_fct_customer_churn__Churn_Label_ ......................... [[32mPASS[0m in 0.10s]
+[0m18:37:18.863856 [debug] [Thread-2 (]: Failed to rollback 'test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6'
+[0m18:37:18.864729 [info ] [Thread-4 (]: 4 of 13 PASS not_null_fct_customer_churn__Monthly_Charges_ ..................... [[32mPASS[0m in 0.09s]
+[0m18:37:18.865292 [debug] [Thread-1 (]: On test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce: Close
+[0m18:37:18.868478 [info ] [Thread-1 (]: 1 of 13 PASS accepted_values_fct_customer_churn__Churn_Label___0__1 ............ [[32mPASS[0m in 0.13s]
+[0m18:37:18.866001 [debug] [Thread-3 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:18.867362 [debug] [Thread-4 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:18.869796 [debug] [Thread-1 (]: Finished running node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:18.866655 [debug] [Thread-2 (]: On test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6: Close
+[0m18:37:18.870397 [debug] [Thread-3 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:18.871030 [debug] [Thread-4 (]: Began running node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:18.871627 [debug] [Thread-1 (]: Began running node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:18.873794 [info ] [Thread-1 (]: 7 of 13 START test not_null_int_customer_features_churn ........................ [RUN]
+[0m18:37:18.875744 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce, now test.customer_churn.not_null_int_customer_features_churn.80fb6a3298)
+[0m18:37:18.872311 [info ] [Thread-3 (]: 5 of 13 START test not_null_fct_customer_churn__Tenure_Months_ ................. [RUN]
+[0m18:37:18.873025 [info ] [Thread-4 (]: 6 of 13 START test not_null_fct_customer_churn_customer_id ..................... [RUN]
+[0m18:37:18.879664 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0, now test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be)
+[0m18:37:18.876743 [info ] [Thread-2 (]: 2 of 13 PASS accepted_values_int_customer_features_gender_encoded__0__1 ........ [[32mPASS[0m in 0.14s]
+[0m18:37:18.877393 [debug] [Thread-1 (]: Began compiling node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:18.882429 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc, now test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e)
+[0m18:37:18.881813 [debug] [Thread-2 (]: Finished running node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:18.880447 [debug] [Thread-4 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:18.889386 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"
+[0m18:37:18.890047 [debug] [Thread-3 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:18.890731 [debug] [Thread-2 (]: Began running node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:18.895167 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"
+[0m18:37:18.895955 [debug] [Thread-1 (]: Began executing node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:18.900206 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"
+[0m18:37:18.900815 [info ] [Thread-2 (]: 8 of 13 START test not_null_int_customer_features_customer_id .................. [RUN]
+[0m18:37:18.901636 [debug] [Thread-4 (]: Began executing node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:18.903976 [debug] [Thread-1 (]: Writing runtime sql for node "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"
+[0m18:37:18.908598 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"
+[0m18:37:18.909346 [debug] [Thread-1 (]: On test.customer_churn.not_null_int_customer_features_churn.80fb6a3298: BEGIN
+[0m18:37:18.904744 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6, now test.customer_churn.not_null_int_customer_features_customer_id.26798febce)
+[0m18:37:18.905339 [debug] [Thread-3 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:18.907664 [debug] [Thread-4 (]: Writing runtime sql for node "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"
+[0m18:37:18.910145 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:18.910691 [debug] [Thread-2 (]: Began compiling node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:18.914240 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"
+[0m18:37:18.924890 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"
+[0m18:37:18.923798 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"
+[0m18:37:18.926595 [debug] [Thread-2 (]: Began executing node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:18.921042 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"
+[0m18:37:18.931282 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be: BEGIN
+[0m18:37:18.931930 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:37:18.925678 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e: BEGIN
+[0m18:37:18.932635 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:37:18.930460 [debug] [Thread-2 (]: Writing runtime sql for node "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"
+[0m18:37:18.933576 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"
+[0m18:37:18.934348 [debug] [Thread-2 (]: On test.customer_churn.not_null_int_customer_features_customer_id.26798febce: BEGIN
+[0m18:37:18.935071 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:37:18.940801 [debug] [Thread-1 (]: SQL status: OK in 0.031 seconds
+[0m18:37:18.941695 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"
+[0m18:37:18.944230 [debug] [Thread-3 (]: SQL status: OK in 0.012 seconds
+[0m18:37:18.944940 [debug] [Thread-1 (]: On test.customer_churn.not_null_int_customer_features_churn.80fb6a3298: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select churn
+from "churn"."main_intermediate"."int_customer_features"
+where churn is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.945766 [debug] [Thread-4 (]: SQL status: OK in 0.014 seconds
+[0m18:37:18.948457 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"
+[0m18:37:18.949278 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from "churn"."main_marts"."fct_customer_churn"
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.946380 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"
+[0m18:37:18.946898 [debug] [Thread-2 (]: SQL status: OK in 0.012 seconds
+[0m18:37:18.950159 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select "Tenure Months"
+from "churn"."main_marts"."fct_customer_churn"
+where "Tenure Months" is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.951015 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m18:37:18.951497 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"
+[0m18:37:18.952003 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m18:37:18.953032 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:37:18.954727 [debug] [Thread-1 (]: On test.customer_churn.not_null_int_customer_features_churn.80fb6a3298: ROLLBACK
+[0m18:37:18.955199 [debug] [Thread-2 (]: On test.customer_churn.not_null_int_customer_features_customer_id.26798febce: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from "churn"."main_intermediate"."int_customer_features"
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:18.956779 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be: ROLLBACK
+[0m18:37:18.962174 [debug] [Thread-4 (]: Failed to rollback 'test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be'
+[0m18:37:18.958401 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e: ROLLBACK
+[0m18:37:18.960132 [debug] [Thread-1 (]: Failed to rollback 'test.customer_churn.not_null_int_customer_features_churn.80fb6a3298'
+[0m18:37:18.967041 [debug] [Thread-1 (]: On test.customer_churn.not_null_int_customer_features_churn.80fb6a3298: Close
+[0m18:37:18.963004 [debug] [Thread-4 (]: On test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be: Close
+[0m18:37:18.966237 [debug] [Thread-3 (]: Failed to rollback 'test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e'
+[0m18:37:18.969910 [debug] [Thread-3 (]: On test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e: Close
+[0m18:37:18.968211 [info ] [Thread-1 (]: 7 of 13 PASS not_null_int_customer_features_churn .............................. [[32mPASS[0m in 0.09s]
+[0m18:37:18.972332 [debug] [Thread-1 (]: Finished running node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:18.973158 [debug] [Thread-1 (]: Began running node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:18.969085 [info ] [Thread-4 (]: 6 of 13 PASS not_null_fct_customer_churn_customer_id ........................... [[32mPASS[0m in 0.09s]
+[0m18:37:18.970978 [info ] [Thread-3 (]: 5 of 13 PASS not_null_fct_customer_churn__Tenure_Months_ ....................... [[32mPASS[0m in 0.09s]
+[0m18:37:18.977143 [debug] [Thread-3 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:18.977935 [debug] [Thread-3 (]: Began running node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:18.978925 [info ] [Thread-3 (]: 10 of 13 START test not_null_stg_customers_tenure_months ....................... [RUN]
+[0m18:37:18.976115 [debug] [Thread-2 (]: SQL status: OK in 0.015 seconds
+[0m18:37:18.975309 [debug] [Thread-4 (]: Finished running node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:18.982934 [debug] [Thread-4 (]: Began running node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:18.979855 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e, now test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663)
+[0m18:37:18.982005 [debug] [Thread-2 (]: On test.customer_churn.not_null_int_customer_features_customer_id.26798febce: ROLLBACK
+[0m18:37:18.974405 [info ] [Thread-1 (]: 9 of 13 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m18:37:18.983755 [info ] [Thread-4 (]: 11 of 13 START test unique_fct_customer_churn_customer_id ...................... [RUN]
+[0m18:37:18.984666 [debug] [Thread-3 (]: Began compiling node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:18.985843 [debug] [Thread-2 (]: Failed to rollback 'test.customer_churn.not_null_int_customer_features_customer_id.26798febce'
+[0m18:37:18.986443 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_int_customer_features_churn.80fb6a3298, now test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m18:37:18.994018 [debug] [Thread-1 (]: Began compiling node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:18.992195 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"
+[0m18:37:18.993079 [debug] [Thread-2 (]: On test.customer_churn.not_null_int_customer_features_customer_id.26798febce: Close
+[0m18:37:18.987019 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be, now test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c)
+[0m18:37:18.999819 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:37:19.000716 [debug] [Thread-3 (]: Began executing node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:19.001342 [debug] [Thread-4 (]: Began compiling node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:19.002146 [debug] [Thread-1 (]: Began executing node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:19.005179 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"
+[0m18:37:19.005857 [info ] [Thread-2 (]: 8 of 13 PASS not_null_int_customer_features_customer_id ........................ [[32mPASS[0m in 0.10s]
+[0m18:37:19.012516 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"
+[0m18:37:19.015956 [debug] [Thread-1 (]: Writing runtime sql for node "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:37:19.016816 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"
+[0m18:37:19.017564 [debug] [Thread-2 (]: Finished running node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:19.018200 [debug] [Thread-4 (]: Began executing node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:19.018764 [debug] [Thread-3 (]: On test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663: BEGIN
+[0m18:37:19.019275 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:37:19.019814 [debug] [Thread-2 (]: Began running node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:19.022198 [debug] [Thread-4 (]: Writing runtime sql for node "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"
+[0m18:37:19.022710 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:37:19.023225 [debug] [Thread-1 (]: On test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa: BEGIN
+[0m18:37:19.025452 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:19.024687 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"
+[0m18:37:19.023745 [info ] [Thread-2 (]: 12 of 13 START test unique_int_customer_features_customer_id ................... [RUN]
+[0m18:37:19.027130 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_int_customer_features_customer_id.26798febce, now test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd)
+[0m18:37:19.026232 [debug] [Thread-4 (]: On test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c: BEGIN
+[0m18:37:19.028674 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:37:19.027934 [debug] [Thread-2 (]: Began compiling node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:19.036647 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"
+[0m18:37:19.039650 [debug] [Thread-2 (]: Began executing node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:19.038619 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m18:37:19.040715 [debug] [Thread-3 (]: SQL status: OK in 0.018 seconds
+[0m18:37:19.045454 [debug] [Thread-2 (]: Writing runtime sql for node "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"
+[0m18:37:19.046538 [debug] [Thread-4 (]: SQL status: OK in 0.018 seconds
+[0m18:37:19.047148 [debug] [Thread-1 (]: Using duckdb connection "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:37:19.047641 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"
+[0m18:37:19.048239 [debug] [Thread-4 (]: Using duckdb connection "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"
+[0m18:37:19.048773 [debug] [Thread-1 (]: On test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select customer_id
+from "churn"."main_staging"."stg_customers"
+where customer_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:19.049382 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"
+[0m18:37:19.051422 [debug] [Thread-2 (]: On test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd: BEGIN
+[0m18:37:19.049778 [debug] [Thread-3 (]: On test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select tenure_months
+from "churn"."main_staging"."stg_customers"
+where tenure_months is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:19.050330 [debug] [Thread-4 (]: On test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "churn"."main_marts"."fct_customer_churn"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:19.052147 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:37:19.054819 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m18:37:19.052873 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:37:19.055548 [debug] [Thread-2 (]: Using duckdb connection "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"
+[0m18:37:19.059556 [debug] [Thread-2 (]: On test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "churn"."main_intermediate"."int_customer_features"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:19.058995 [debug] [Thread-1 (]: On test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa: ROLLBACK
+[0m18:37:19.056445 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m18:37:19.060078 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m18:37:19.066659 [debug] [Thread-4 (]: On test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c: ROLLBACK
+[0m18:37:19.064360 [debug] [Thread-3 (]: On test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663: ROLLBACK
+[0m18:37:19.061841 [debug] [Thread-1 (]: Failed to rollback 'test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m18:37:19.072121 [debug] [Thread-1 (]: On test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa: Close
+[0m18:37:19.067642 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m18:37:19.071189 [debug] [Thread-3 (]: Failed to rollback 'test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663'
+[0m18:37:19.069355 [debug] [Thread-4 (]: Failed to rollback 'test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c'
+[0m18:37:19.076201 [debug] [Thread-4 (]: On test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c: Close
+[0m18:37:19.074863 [debug] [Thread-2 (]: On test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd: ROLLBACK
+[0m18:37:19.073294 [info ] [Thread-1 (]: 9 of 13 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 0.09s]
+[0m18:37:19.075655 [debug] [Thread-3 (]: On test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663: Close
+[0m18:37:19.080518 [info ] [Thread-3 (]: 10 of 13 PASS not_null_stg_customers_tenure_months ............................. [[32mPASS[0m in 0.10s]
+[0m18:37:19.081557 [debug] [Thread-3 (]: Finished running node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:19.077132 [info ] [Thread-4 (]: 11 of 13 PASS unique_fct_customer_churn_customer_id ............................ [[32mPASS[0m in 0.09s]
+[0m18:37:19.079335 [debug] [Thread-1 (]: Finished running node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:19.078267 [debug] [Thread-2 (]: Failed to rollback 'test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd'
+[0m18:37:19.084688 [debug] [Thread-2 (]: On test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd: Close
+[0m18:37:19.082666 [debug] [Thread-3 (]: Began running node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:19.083894 [debug] [Thread-4 (]: Finished running node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:19.085595 [info ] [Thread-3 (]: 13 of 13 START test unique_stg_customers_customer_id ........................... [RUN]
+[0m18:37:19.087033 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663, now test.customer_churn.unique_stg_customers_customer_id.c7614daada)
+[0m18:37:19.088416 [debug] [Thread-3 (]: Began compiling node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:19.096028 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.unique_stg_customers_customer_id.c7614daada"
+[0m18:37:19.098360 [debug] [Thread-3 (]: Began executing node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:19.097490 [info ] [Thread-2 (]: 12 of 13 PASS unique_int_customer_features_customer_id ......................... [[32mPASS[0m in 0.07s]
+[0m18:37:19.103961 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_churn.unique_stg_customers_customer_id.c7614daada"
+[0m18:37:19.104886 [debug] [Thread-2 (]: Finished running node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:19.106006 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.unique_stg_customers_customer_id.c7614daada"
+[0m18:37:19.106974 [debug] [Thread-3 (]: On test.customer_churn.unique_stg_customers_customer_id.c7614daada: BEGIN
+[0m18:37:19.107913 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:37:19.115325 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m18:37:19.116435 [debug] [Thread-3 (]: Using duckdb connection "test.customer_churn.unique_stg_customers_customer_id.c7614daada"
+[0m18:37:19.117017 [debug] [Thread-3 (]: On test.customer_churn.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "node_id": "test.customer_churn.unique_stg_customers_customer_id.c7614daada"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "churn"."main_staging"."stg_customers"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:37:19.121684 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m18:37:19.123479 [debug] [Thread-3 (]: On test.customer_churn.unique_stg_customers_customer_id.c7614daada: ROLLBACK
+[0m18:37:19.124601 [debug] [Thread-3 (]: Failed to rollback 'test.customer_churn.unique_stg_customers_customer_id.c7614daada'
+[0m18:37:19.125117 [debug] [Thread-3 (]: On test.customer_churn.unique_stg_customers_customer_id.c7614daada: Close
+[0m18:37:19.127169 [info ] [Thread-3 (]: 13 of 13 PASS unique_stg_customers_customer_id ................................. [[32mPASS[0m in 0.04s]
+[0m18:37:19.127929 [debug] [Thread-3 (]: Finished running node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:19.129479 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:19.129901 [debug] [MainThread]: On master: BEGIN
+[0m18:37:19.130314 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:37:19.141076 [debug] [MainThread]: SQL status: OK in 0.011 seconds
+[0m18:37:19.141691 [debug] [MainThread]: On master: COMMIT
+[0m18:37:19.142133 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:37:19.142537 [debug] [MainThread]: On master: COMMIT
+[0m18:37:19.143199 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:37:19.143624 [debug] [MainThread]: On master: Close
+[0m18:37:19.145467 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:37:19.145922 [debug] [MainThread]: Connection 'test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c' was properly closed.
+[0m18:37:19.146367 [debug] [MainThread]: Connection 'test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd' was properly closed.
+[0m18:37:19.146761 [debug] [MainThread]: Connection 'test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa' was properly closed.
+[0m18:37:19.147167 [debug] [MainThread]: Connection 'test.customer_churn.unique_stg_customers_customer_id.c7614daada' was properly closed.
+[0m18:37:19.147665 [info ] [MainThread]: 
+[0m18:37:19.148212 [info ] [MainThread]: Finished running 13 data tests in 0 hours 0 minutes and 0.59 seconds (0.59s).
+[0m18:37:19.150420 [debug] [MainThread]: Command end result
+[0m18:37:19.178094 [info ] [MainThread]: 
+[0m18:37:19.178846 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:37:19.179439 [info ] [MainThread]: 
+[0m18:37:19.179986 [info ] [MainThread]: Done. PASS=13 WARN=0 ERROR=0 SKIP=0 TOTAL=13
+[0m18:37:19.181112 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.3627461, "process_user_time": 2.536785, "process_kernel_time": 0.212312, "process_mem_max_rss": "154492", "process_in_blocks": "1536", "process_out_blocks": "2176"}
+[0m18:37:19.181695 [debug] [MainThread]: Command `dbt test` succeeded at 18:37:19.181586 after 1.36 seconds
+[0m18:37:19.182177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc461d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc66b650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedbc669490>]}
+[0m18:37:19.182648 [debug] [MainThread]: Flushing usage events
+[0m18:37:28.996722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67db8e2ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d822abd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67da8adf70>]}
+
+
+============================== 18:37:29.003455 | a21895f1-1e19-4198-8f33-02ba48405b3d ==============================
+[0m18:37:29.003455 [info ] [MainThread]: Running with dbt=1.8.7
+[0m18:37:29.004264 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project', 'debug': 'False', 'warn_error': 'None', 'log_path': '/workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:37:29.197745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d7f6e300>]}
+[0m18:37:29.254528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67da851f70>]}
+[0m18:37:29.257743 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m18:37:29.385470 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m18:37:29.523727 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:37:29.524266 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:37:29.568318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d340c050>]}
+[0m18:37:29.580743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d3220b60>]}
+[0m18:37:29.581436 [info ] [MainThread]: Found 3 models, 1 seed, 13 data tests, 421 macros
+[0m18:37:29.582031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d918ea50>]}
+[0m18:37:29.584368 [info ] [MainThread]: 
+[0m18:37:29.585219 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:37:29.586412 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_intermediate'
+[0m18:37:29.587245 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_marts'
+[0m18:37:29.604841 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_staging'
+[0m18:37:29.607936 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_churn_main_raw'
+[0m18:37:29.631571 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:29.632175 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:29.632623 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:29.633003 [debug] [ThreadPool]: On list_churn_main_intermediate: BEGIN
+[0m18:37:29.633383 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:29.633815 [debug] [ThreadPool]: On list_churn_main_marts: BEGIN
+[0m18:37:29.634269 [debug] [ThreadPool]: On list_churn_main_staging: BEGIN
+[0m18:37:29.634705 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:29.635127 [debug] [ThreadPool]: On list_churn_main_raw: BEGIN
+[0m18:37:29.635562 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:29.635961 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:29.636606 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:29.644803 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m18:37:29.645462 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_staging"
+[0m18:37:29.645902 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m18:37:29.646576 [debug] [ThreadPool]: On list_churn_main_staging: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_staging"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_staging'
+    and table_catalog = 'churn'
+  
+[0m18:37:29.647081 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m18:37:29.648742 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_marts"
+[0m18:37:29.649387 [debug] [ThreadPool]: On list_churn_main_marts: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_marts"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_marts'
+    and table_catalog = 'churn'
+  
+[0m18:37:29.647503 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m18:37:29.650271 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_raw"
+[0m18:37:29.647971 [debug] [ThreadPool]: Using duckdb connection "list_churn_main_intermediate"
+[0m18:37:29.651884 [debug] [ThreadPool]: On list_churn_main_intermediate: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_intermediate"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_intermediate'
+    and table_catalog = 'churn'
+  
+[0m18:37:29.650940 [debug] [ThreadPool]: On list_churn_main_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "list_churn_main_raw"} */
+select
+      'churn' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_raw'
+    and table_catalog = 'churn'
+  
+[0m18:37:29.717877 [debug] [ThreadPool]: SQL status: OK in 0.065 seconds
+[0m18:37:29.720183 [debug] [ThreadPool]: SQL status: OK in 0.070 seconds
+[0m18:37:29.727837 [debug] [ThreadPool]: On list_churn_main_intermediate: ROLLBACK
+[0m18:37:29.733584 [debug] [ThreadPool]: On list_churn_main_marts: ROLLBACK
+[0m18:37:29.734149 [debug] [ThreadPool]: SQL status: OK in 0.086 seconds
+[0m18:37:29.734539 [debug] [ThreadPool]: SQL status: OK in 0.080 seconds
+[0m18:37:29.736085 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_marts'
+[0m18:37:29.737210 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_intermediate'
+[0m18:37:29.738708 [debug] [ThreadPool]: On list_churn_main_staging: ROLLBACK
+[0m18:37:29.739957 [debug] [ThreadPool]: On list_churn_main_raw: ROLLBACK
+[0m18:37:29.740456 [debug] [ThreadPool]: On list_churn_main_marts: Close
+[0m18:37:29.740899 [debug] [ThreadPool]: On list_churn_main_intermediate: Close
+[0m18:37:29.741924 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_staging'
+[0m18:37:29.742897 [debug] [ThreadPool]: Failed to rollback 'list_churn_main_raw'
+[0m18:37:29.744319 [debug] [ThreadPool]: On list_churn_main_staging: Close
+[0m18:37:29.745170 [debug] [ThreadPool]: On list_churn_main_raw: Close
+[0m18:37:29.748827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a21895f1-1e19-4198-8f33-02ba48405b3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d346a510>]}
+[0m18:37:29.749588 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:37:29.750155 [info ] [MainThread]: 
+[0m18:37:29.752805 [debug] [Thread-1 (]: Began running node seed.customer_churn.Telco_customer_churn
+[0m18:37:29.753416 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_churn_main_staging, now seed.customer_churn.Telco_customer_churn)
+[0m18:37:29.753902 [debug] [Thread-1 (]: Began compiling node seed.customer_churn.Telco_customer_churn
+[0m18:37:29.761896 [debug] [Thread-1 (]: Began executing node seed.customer_churn.Telco_customer_churn
+[0m18:37:29.762909 [debug] [Thread-1 (]: Finished running node seed.customer_churn.Telco_customer_churn
+[0m18:37:29.763944 [debug] [Thread-3 (]: Began running node model.customer_churn.stg_customers
+[0m18:37:29.764594 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_churn_main_intermediate, now model.customer_churn.stg_customers)
+[0m18:37:29.765058 [debug] [Thread-3 (]: Began compiling node model.customer_churn.stg_customers
+[0m18:37:29.768090 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_churn.stg_customers"
+[0m18:37:29.768813 [debug] [Thread-3 (]: Began executing node model.customer_churn.stg_customers
+[0m18:37:29.769617 [debug] [Thread-3 (]: Finished running node model.customer_churn.stg_customers
+[0m18:37:29.770589 [debug] [Thread-2 (]: Began running node model.customer_churn.int_customer_features
+[0m18:37:29.771432 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_churn_main_raw, now model.customer_churn.int_customer_features)
+[0m18:37:29.772174 [debug] [Thread-1 (]: Began running node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:29.773314 [debug] [Thread-4 (]: Began running node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:29.773767 [debug] [Thread-3 (]: Began running node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:29.774263 [debug] [Thread-2 (]: Began compiling node model.customer_churn.int_customer_features
+[0m18:37:29.775435 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.customer_churn.Telco_customer_churn, now test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m18:37:29.776292 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_churn_main_marts, now test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663)
+[0m18:37:29.782853 [debug] [Thread-4 (]: Began compiling node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:29.776965 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.customer_churn.stg_customers, now test.customer_churn.unique_stg_customers_customer_id.c7614daada)
+[0m18:37:29.781883 [debug] [Thread-1 (]: Began compiling node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:29.781287 [debug] [Thread-2 (]: Writing injected SQL for node "model.customer_churn.int_customer_features"
+[0m18:37:29.789244 [debug] [Thread-3 (]: Began compiling node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:29.810231 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663"
+[0m18:37:29.812324 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:37:29.818455 [debug] [Thread-2 (]: Began executing node model.customer_churn.int_customer_features
+[0m18:37:29.820938 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.unique_stg_customers_customer_id.c7614daada"
+[0m18:37:29.821730 [debug] [Thread-4 (]: Began executing node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:29.822711 [debug] [Thread-2 (]: Finished running node model.customer_churn.int_customer_features
+[0m18:37:29.823421 [debug] [Thread-1 (]: Began executing node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:29.824308 [debug] [Thread-4 (]: Finished running node test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663
+[0m18:37:29.824707 [debug] [Thread-3 (]: Began executing node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:29.825681 [debug] [Thread-1 (]: Finished running node test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:37:29.826445 [debug] [Thread-4 (]: Began running node model.customer_churn.fct_customer_churn
+[0m18:37:29.826872 [debug] [Thread-2 (]: Began running node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:29.827719 [debug] [Thread-3 (]: Finished running node test.customer_churn.unique_stg_customers_customer_id.c7614daada
+[0m18:37:29.828258 [debug] [Thread-1 (]: Began running node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:29.828850 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_stg_customers_tenure_months.2c240dd663, now model.customer_churn.fct_customer_churn)
+[0m18:37:29.829395 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.customer_churn.int_customer_features, now test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6)
+[0m18:37:29.829920 [debug] [Thread-3 (]: Began running node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:29.830512 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.customer_churn.not_null_int_customer_features_churn.80fb6a3298)
+[0m18:37:29.831009 [debug] [Thread-4 (]: Began compiling node model.customer_churn.fct_customer_churn
+[0m18:37:29.831512 [debug] [Thread-2 (]: Began compiling node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:29.832014 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_churn.unique_stg_customers_customer_id.c7614daada, now test.customer_churn.not_null_int_customer_features_customer_id.26798febce)
+[0m18:37:29.832511 [debug] [Thread-1 (]: Began compiling node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:29.835788 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_churn.fct_customer_churn"
+[0m18:37:29.843694 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6"
+[0m18:37:29.844364 [debug] [Thread-3 (]: Began compiling node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:29.848530 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.not_null_int_customer_features_churn.80fb6a3298"
+[0m18:37:29.852918 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.not_null_int_customer_features_customer_id.26798febce"
+[0m18:37:29.853652 [debug] [Thread-4 (]: Began executing node model.customer_churn.fct_customer_churn
+[0m18:37:29.854376 [debug] [Thread-2 (]: Began executing node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:29.854961 [debug] [Thread-1 (]: Began executing node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:29.855905 [debug] [Thread-4 (]: Finished running node model.customer_churn.fct_customer_churn
+[0m18:37:29.856764 [debug] [Thread-2 (]: Finished running node test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6
+[0m18:37:29.857183 [debug] [Thread-3 (]: Began executing node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:29.857916 [debug] [Thread-1 (]: Finished running node test.customer_churn.not_null_int_customer_features_churn.80fb6a3298
+[0m18:37:29.858489 [debug] [Thread-4 (]: Began running node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:29.859424 [debug] [Thread-2 (]: Began running node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:29.860182 [debug] [Thread-3 (]: Finished running node test.customer_churn.not_null_int_customer_features_customer_id.26798febce
+[0m18:37:29.860736 [debug] [Thread-1 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:29.861325 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_churn.fct_customer_churn, now test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd)
+[0m18:37:29.861862 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.customer_churn.accepted_values_int_customer_features_gender_encoded__0__1.77a91d09c6, now test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce)
+[0m18:37:29.862432 [debug] [Thread-3 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:29.863007 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_int_customer_features_churn.80fb6a3298, now test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc)
+[0m18:37:29.863509 [debug] [Thread-4 (]: Began compiling node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:29.863973 [debug] [Thread-2 (]: Began compiling node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:29.864498 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_int_customer_features_customer_id.26798febce, now test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0)
+[0m18:37:29.864987 [debug] [Thread-1 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:29.869308 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd"
+[0m18:37:29.873447 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce"
+[0m18:37:29.874067 [debug] [Thread-3 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:29.878071 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc"
+[0m18:37:29.882331 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0"
+[0m18:37:29.883036 [debug] [Thread-4 (]: Began executing node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:29.883711 [debug] [Thread-2 (]: Began executing node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:29.884287 [debug] [Thread-1 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:29.885314 [debug] [Thread-4 (]: Finished running node test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd
+[0m18:37:29.885814 [debug] [Thread-3 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:29.886538 [debug] [Thread-2 (]: Finished running node test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce
+[0m18:37:29.887331 [debug] [Thread-1 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc
+[0m18:37:29.887901 [debug] [Thread-4 (]: Began running node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:29.888754 [debug] [Thread-3 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0
+[0m18:37:29.889331 [debug] [Thread-2 (]: Began running node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:29.889961 [debug] [Thread-1 (]: Began running node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:29.890623 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.customer_churn.unique_int_customer_features_customer_id.98bc039cfd, now test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e)
+[0m18:37:29.891325 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.customer_churn.accepted_values_fct_customer_churn__Churn_Label___0__1.a0ad3a30ce, now test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be)
+[0m18:37:29.891843 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_churn.not_null_fct_customer_churn__Churn_Label_.81e11a10bc, now test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c)
+[0m18:37:29.892369 [debug] [Thread-4 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:29.892844 [debug] [Thread-2 (]: Began compiling node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:29.893320 [debug] [Thread-1 (]: Began compiling node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:29.897464 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e"
+[0m18:37:29.901706 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be"
+[0m18:37:29.907041 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c"
+[0m18:37:29.908042 [debug] [Thread-1 (]: Began executing node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:29.909803 [debug] [Thread-1 (]: Finished running node test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c
+[0m18:37:29.908596 [debug] [Thread-4 (]: Began executing node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:29.910985 [debug] [Thread-4 (]: Finished running node test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e
+[0m18:37:29.911793 [debug] [Thread-2 (]: Began executing node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:29.913135 [debug] [Thread-2 (]: Finished running node test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be
+[0m18:37:29.914729 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:37:29.915441 [debug] [MainThread]: Connection 'test.customer_churn.not_null_fct_customer_churn__Monthly_Charges_.2ac9fdc7d0' was properly closed.
+[0m18:37:29.916066 [debug] [MainThread]: Connection 'test.customer_churn.not_null_fct_customer_churn__Tenure_Months_.ccc856eb2e' was properly closed.
+[0m18:37:29.916699 [debug] [MainThread]: Connection 'test.customer_churn.unique_fct_customer_churn_customer_id.133fe97e4c' was properly closed.
+[0m18:37:29.917383 [debug] [MainThread]: Connection 'test.customer_churn.not_null_fct_customer_churn_customer_id.0259e621be' was properly closed.
+[0m18:37:29.923480 [debug] [MainThread]: Command end result
+[0m18:37:30.055136 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m18:37:30.055656 [info ] [MainThread]: Building catalog
+[0m18:37:30.068302 [debug] [ThreadPool]: Acquiring new duckdb connection 'churn.information_schema'
+[0m18:37:30.075250 [debug] [ThreadPool]: Using duckdb connection "churn.information_schema"
+[0m18:37:30.075812 [debug] [ThreadPool]: On churn.information_schema: BEGIN
+[0m18:37:30.076274 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:30.084149 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m18:37:30.084715 [debug] [ThreadPool]: Using duckdb connection "churn.information_schema"
+[0m18:37:30.085223 [debug] [ThreadPool]: On churn.information_schema: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "customer_churn", "target_name": "dev", "connection_name": "churn.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'churn'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'churn'
+    )
+    select
+        'churn' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        '' as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('main_raw') or upper(r.schema_name) = upper('main_intermediate') or upper(r.schema_name) = upper('main_marts') or upper(r.schema_name) = upper('main_staging'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m18:37:30.124241 [debug] [ThreadPool]: SQL status: OK in 0.038 seconds
+[0m18:37:30.132150 [debug] [ThreadPool]: On churn.information_schema: ROLLBACK
+[0m18:37:30.133296 [debug] [ThreadPool]: Failed to rollback 'churn.information_schema'
+[0m18:37:30.133785 [debug] [ThreadPool]: On churn.information_schema: Close
+[0m18:37:30.170398 [info ] [MainThread]: Catalog written to /workspaces/Customer-Churn-Analysis-and-Retention-Strategy-Project/dbt_project/target/catalog.json
+[0m18:37:30.171728 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.2329547, "process_user_time": 2.415997, "process_kernel_time": 0.149566, "process_mem_max_rss": "155828", "process_in_blocks": "3200", "process_out_blocks": "5088"}
+[0m18:37:30.172419 [debug] [MainThread]: Command `dbt docs generate` succeeded at 18:37:30.172298 after 1.23 seconds
+[0m18:37:30.172858 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m18:37:30.173243 [debug] [MainThread]: Connection 'churn.information_schema' was properly closed.
+[0m18:37:30.173674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67db8e2ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d84354c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b67d3221100>]}
+[0m18:37:30.174136 [debug] [MainThread]: Flushing usage events
