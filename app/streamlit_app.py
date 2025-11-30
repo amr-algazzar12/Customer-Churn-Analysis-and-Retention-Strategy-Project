@@ -110,7 +110,10 @@ with col2:
     phone = st.selectbox("Phone", ["No", "Yes"])
     internet = st.selectbox("Internet", ["No", "DSL", "Fiber optic"])
 
-    tech = st.selectbox("Tech Support", ["No", "Yes"]) if internet != "No" else "No"
+    if internet != "No":
+        tech = st.selectbox("Tech Support", ["No", "Yes"])
+    else:
+        tech = "No"
 
     monthly = st.number_input("Monthly ($)", 18.0, 120.0, 70.0, 5.0)
     total = st.number_input("Total ($)", 0.0, 10000.0, float(monthly * tenure), 50.0)
